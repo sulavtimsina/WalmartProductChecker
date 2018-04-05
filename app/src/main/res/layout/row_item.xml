@@ -23,7 +23,7 @@
         android:textStyle="bold"
         android:gravity="center_vertical"
         android:layout_marginLeft="10dp"
-        android:id="@+id/email"
+        android:id="@+id/stock"
         />
 
 </LinearLayout>

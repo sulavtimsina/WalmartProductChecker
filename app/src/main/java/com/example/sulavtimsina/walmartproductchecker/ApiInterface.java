@@ -1,6 +1,6 @@
 package com.example.sulavtimsina.walmartproductchecker;
 
-import com.example.sulavtimsina.walmartproductchecker.Product.ProductModel;
+import com.example.sulavtimsina.walmartproductchecker.Product.Product;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 
 public interface ApiInterface {
 
-    @GET("vwxn7")
-    Call<List<Contact>> getContacts();
+//    @GET("860521932?apiKey=xfsk5b37m9nczburwdkgvdat&format=json")
+    @GET("adgz7")
+    Call<List<Product>> getProducts();
 }
