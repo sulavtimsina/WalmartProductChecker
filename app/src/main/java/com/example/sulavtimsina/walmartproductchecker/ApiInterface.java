@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface ApiInterface {
 
-    @GET()
-    Call<List<ProductModel>> getProducts();
+    @GET("vwxn7")
+    Call<List<Contact>> getContacts();
 }
