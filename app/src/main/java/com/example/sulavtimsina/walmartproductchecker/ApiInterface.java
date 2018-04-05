@@ -6,10 +6,11 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface ApiInterface {
 
 //    @GET("860521932?apiKey=xfsk5b37m9nczburwdkgvdat&format=json")
-    @GET("adgz7")
-    Call<List<Product>> getProducts();
+    @GET("items/{sku}?apiKey=xfsk5b37m9nczburwdkgvdat&format=json")
+    Call<List<Product>> getProducts(@Path("sku") String sku);
 }

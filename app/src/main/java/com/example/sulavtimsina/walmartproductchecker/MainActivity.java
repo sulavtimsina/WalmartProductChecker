@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //making request
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-        Call<List<Product>> call = apiInterface.getProducts();
+        Call<List<Product>> call = apiInterface.getProducts("860521932");
         call.enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 products = response.body();
                 adapter = new RecyclerAdapter(products);
                 recyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
             }
 
             @Override

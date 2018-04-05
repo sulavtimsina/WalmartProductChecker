@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 //    public static final String BASE_URL = "https://api.myjson.com/bins/";
 //    public static final String BASE_URL = "http://api.walmartlabs.com/v1/items/";
-    public static final String BASE_URL = "https://api.myjson.com/bins/";
+    public static final String BASE_URL = "http://api.walmartlabs.com/v1/";
     public static Retrofit retrofit = null;
 
     public static Retrofit getApiClient(){
