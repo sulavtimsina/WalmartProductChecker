@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.sulavtimsina.walmartproductchecker.Product.Product;
 
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerAdapter adapter;
-    private List<Product> products;
+    private List<Contact> contacts;
     private ApiInterface apiInterface;
 
     @Override
@@ -36,20 +35,20 @@ public class MainActivity extends AppCompatActivity {
         //making request
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-        Call<List<Product>> call = apiInterface.getProducts();
-        call.enqueue(new Callback<List<Product>>() {
+        Call<List<Contact>> call = apiInterface.getContacts();
+        call.enqueue(new Callback<List<Contact>>() {
             @Override
-            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                Toast.makeText(MainActivity.this, "hellothere", Toast.LENGTH_SHORT).show();
-                products = response.body();
-                adapter = new RecyclerAdapter(products);
+            public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
+                Toast.makeText(MainActivity.this, "hello there", Toast.LENGTH_SHORT).show();
+                contacts = response.body();
+                adapter = new RecyclerAdapter(contacts);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onFailure(Call<List<Product>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "hellothere hell", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<List<Contact>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "hello there hell", Toast.LENGTH_SHORT).show();
                 Log.d("log d ", call.toString());
             }
         });

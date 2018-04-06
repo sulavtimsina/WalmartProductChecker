@@ -7,16 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.sulavtimsina.walmartproductchecker.Product.Product;
 
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
 
-    private List<Product> products;
+    private List<Contact> contacts;
 
-    public RecyclerAdapter(List<Product> products) {
-        this.products = products;
+    public RecyclerAdapter(List<Contact> contacts) {
+        this.contacts = contacts;
     }
 
     @NonNull
@@ -28,13 +27,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.name.setText(products.get(position).getName());
-        holder.email.setText(products.get(position).getStock());
+        holder.name.setText(contacts.get(position).getName());
+        holder.email.setText(contacts.get(position).getStock());
     }
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return contacts.size();
     }
     public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView name, email;
